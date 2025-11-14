@@ -1,0 +1,328 @@
+/* Jeong Flooring Co. — Ceramic & Marble Focused Styles */
+
+/* ===== Theme ===== */
+:root {
+  --bg: #f6f2ee;
+  --surface: #ffffff;
+  --text: #2d241c;
+  --muted: #6b635b;
+  --primary: #8B5E3C;      /* rich wood brown */
+  --primary-700: #724a2f;  /* darker brown */
+  --accent: #D7A86E;       /* light honey */
+  --ring: 0 0 0 .15rem rgba(139,94,60,.25);
+  --radius: 16px;
+  --shadow: 0 10px 25px rgba(0,0,0,.08), 0 2px 8px rgba(0,0,0,.06);
+}
+
+/* ===== Base ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Accessibility helper */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== Layout ===== */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.section {
+  padding: clamp(48px, 8vw, 96px) 0;
+}
+
+.section h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  margin: 0 0 .75rem;
+}
+
+.section p.lead {
+  color: var(--muted);
+  max-width: 65ch;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 700px) {
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.1rem;
+}
+
+.card h3 {
+  margin: .25rem 0 .35rem;
+}
+
+/* ===== Header / Nav ===== */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, .8);
+  backdrop-filter: saturate(180%) blur(12px);
+  border-bottom: 1px solid #eee;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  padding: .65rem 0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  font-weight: 700;
+  letter-spacing: .3px;
+}
+
+.brand-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: var(--shadow);
+}
+
+.nav a {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.cta-phone {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .55rem .9rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+  box-shadow: var(--shadow);
+}
+
+.cta-phone:hover {
+  background: var(--primary-700);
+  text-decoration: none;
+}
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  isolation: isolate;
+  color: #fff;
+  overflow: hidden;
+  /* Subtle plank-like backdrop */
+  background: repeating-linear-gradient(
+    90deg,
+    #6e4a2f 0 60px,
+    #704e34 60px 61px,
+    #6e4a2f 61px 122px,
+    #744f34 122px 123px
+  );
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, .35), rgba(0, 0, 0, .45));
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  padding: clamp(64px, 12vw, 128px) 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin: 0 0 .5rem;
+  letter-spacing: .5px;
+}
+
+.hero p {
+  margin: 0 auto 1.25rem;
+  max-width: 48ch;
+  color: #f1e8e0;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: .75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===== Buttons & Forms ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn.primary {
+  background: var(--accent);
+  color: #3c2a1a;
+  padding: .8rem 1.1rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.btn.primary:hover {
+  filter: brightness(.98);
+}
+
+.btn.secondary {
+  background: #fff;
+  color: var(--primary-700);
+  padding: .8rem 1.1rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+form {
+  display: grid;
+  gap: .75rem;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: .8rem .9rem;
+  border-radius: 12px;
+  border: 1px solid #e7e1da;
+  background: #fff;
+  font: inherit;
+  color: inherit;
+  outline: none;
+  box-shadow: none;
+}
+
+input:focus,
+textarea:focus {
+  box-shadow: var(--ring);
+  border-color: #d9cbbb;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ===== Gallery (ceramic & marble focus) ===== */
+.tile {
+  aspect-ratio: 4 / 3;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #e8d8c7, #f8f2ec);
+  box-shadow: var(--shadow);
+}
+
+.tile::after {
+  content: "Ceramic • Marble";
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: .35rem .65rem;
+  color: #fff;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, .55));
+  font-size: .85rem;
+}
+
+/* ===== Contact strip ===== */
+.contact-strip {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-700) 100%);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem;
+  justify-content: space-between;
+  box-shadow: var(--shadow);
+}
+
+.contact-strip a {
+  color: #fff;
+}
+
+/* ===== Footer ===== */
+footer {
+  padding: 32px 0 48px;
+  color: #594b3f;
+}
