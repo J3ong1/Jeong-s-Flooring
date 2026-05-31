@@ -1,6 +1,6 @@
-# Jeong Flooring Co. – Ceramic & Marble Flooring Website
+# Tile World, L.C. – Ceramic & Marble Flooring Website
 
-This website was built as a clean and mobile-friendly landing page for **Jeong Flooring Co.**, a local Maryland business specializing in ceramic/marble flooring.  
+This website was built as a clean and mobile-friendly landing page for **Tile World, L.C.**, a local Maryland business specializing in ceramic/marble flooring.  
 It’s a simple website made with HTML and CSS, designed to portray the company’s services, contact information, and its impact with an efficient/user-friendly navigational system.
 
 ---
